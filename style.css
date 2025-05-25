@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to top right, #ffe0ec, #fad0c4);
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  text-align: center;
+  color: #d63384;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 20px;
+  background: #fff0f5;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  max-width: 800px;
+  margin: 50px auto;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #ff1493;
+}
+
+.hidden {
+  display: none;
+}
+
+.cartinha {
+  background: #fff;
+  color: #222;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  white-space: pre-wrap;
+  min-height: 100px;
+}
+
+/* Galeria */
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.galeria img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.galeria img:hover {
+  transform: scale(1.05);
+}
+
+/* Corações */
+.coracao {
+  position: fixed;
+  top: -20px;
+  width: 20px;
+  height: 20px;
+  background: red;
+  transform: rotate(45deg);
+  animation: cair linear infinite;
+  z-index: 1000;
+}
+
+.coracao::before,
+.coracao::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: red;
+  border-radius: 50%;
+}
+
+.coracao::before {
+  top: -10px;
+  left: 0;
+}
+
+.coracao::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes cair {
+  to {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0;
+  }
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For my little princess💕</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1 id="mensagem">Oi, minha vida!💕</h1>
+    <button id="botao">Clica ae!</button>
+
+    <div id="surpresa" class="hidden">
+      <div class="cartinha" id="cartinha"></div>
+
+      <h2>📸🎨 Nossas memórias</h2>
+      <div class="galeria">
+        <img src="img principal.jpg" alt="Foto 1" />
+        <img src="img1.jpg" alt="Foto 2" />
+        <img src="img3.jpg" alt="Foto 3" />
+        <!-- Adicione mais imagens conforme quiser -->
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const botao = document.getElementById("botao");
+    const surpresa = document.getElementById("surpresa");
+    const cartinha = document.getElementById("cartinha");
+
+    const texto = "Oi meu bem, isso aqui é algo pequeno, mas que serve para guardar algumas de nossas memórias mais felizes juntas, espero que goste e que guarde com muito carinho. Feliz nosso dia 26, que pra sempre será nosso, eu te amo!💕";
+
+    botao.addEventListener("click", () => {
+      surpresa.classList.remove("hidden");
+      botao.style.display = "none";
+      escreverTexto();
+      criarCorações();
+    });
+
+    function escreverTexto(i = 0) {
+      if (i < texto.length) {
+        cartinha.innerHTML += texto.charAt(i);
+        setTimeout(() => escreverTexto(i + 1), 50);
+      }
+    }
+
+    function criarCorações() {
+      for (let i = 0; i < 30; i++) {
+        const coracao = document.createElement("div");
+        coracao.className = "coracao";
+        coracao.style.left = Math.random() * 100 + "vw";
+        coracao.style.animationDuration = (2 + Math.random() * 3) + "s";
+        document.body.appendChild(coracao);
+
+        setTimeout(() => coracao.remove(), 5000);
+      }
+    }
+  </script>
+</body>
+</html>
